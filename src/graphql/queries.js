@@ -13,3 +13,19 @@ export const GET_AUTHORS = gql`
     }
   }
 `;
+
+export const GET_AUTHOR = gql`
+  query getAuthor($slug: String!) {
+    author(where: { slug: $slug }) {
+      firstName
+      lastName
+      email
+      description {
+        html
+      }
+      avatar {
+        url
+      }
+    }
+  }
+`;

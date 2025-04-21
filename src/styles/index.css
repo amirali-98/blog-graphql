@@ -7,9 +7,28 @@
 body {
   font-family: "YekanBakh", sans-serif;
   font-weight: 400;
+  background-color: #f9fafb;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* .author-description {
+  bo
+} */
+
+.author-description p {
+  margin-bottom: 8px;
+}
+
+.author-description h2 {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.author-description ul {
+  padding: 0 16px;
+  list-style: none;
 }
