@@ -26,6 +26,14 @@ export const GET_AUTHOR = gql`
       avatar {
         url
       }
+      post {
+        id
+        title
+        slug
+        cover {
+          url
+        }
+      }
     }
   }
 `;

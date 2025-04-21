@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import { Container, Avatar, Box, Typography } from "@mui/material";
+import { Container, Avatar, Box, Typography, Grid } from "@mui/material";
 import dompurify from "dompurify";
 import { GET_AUTHOR } from "../graphql/queries";
+import AuthorRelatedPost from "../components/AuthorRelatedPost";
 
 export default function Author() {
   const { slug } = useParams();
@@ -19,7 +20,7 @@ export default function Author() {
   console.log(author);
   return (
     <Container maxWidth="lg">
-      <Box textAlign="center" sx={{ mb: 10 }}>
+      <Box textAlign="center" sx={{ mb: 5 }}>
         <Avatar
           sx={{ mx: "auto", width: "200px", height: "200px" }}
           alt={author.data?.author.slug}
@@ -27,6 +28,7 @@ export default function Author() {
         />
       </Box>
       <Typography
+        textAlign="center"
         component="h2"
         fontSize="2rem"
         fontWeight="700"
@@ -44,9 +46,14 @@ export default function Author() {
           __html: dompurify.sanitize(author.data?.author.description.html),
         }}
       />
-      <Typography variant="h5" fontWeight="700">
+      <Typography variant="h5" fontWeight="700" mb={2}>
         پست‌های این نویسنده:
       </Typography>
+      <Grid container gap={2}>
+        {author.data?.author.post.map(post => (
+          <AuthorRelatedPost key={post.id} post={post} />
+        ))}
+      </Grid>
     </Container>
   );
 }
