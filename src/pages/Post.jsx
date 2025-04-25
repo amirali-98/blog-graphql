@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { Container, Typography } from "@mui/material";
 import dompurify from "dompurify";
 import { GET_POST } from "../graphql/queries";
+import CommentForm from "../components/CommentForm";
 
 export default function Post() {
   const [post, setPost] = useState({});
@@ -17,11 +18,10 @@ export default function Post() {
       title: response.data?.post.title || "",
       cover: response.data?.post.cover.url,
       content: response.data?.post.content.html || "",
+      slug: response.data?.post.slug,
       loading: response.loading,
     });
   }, [response]);
-
-  console.log(response);
 
   return (
     <Container maxWidth="lg">
@@ -45,6 +45,7 @@ export default function Post() {
           __html: dompurify.sanitize(post.content),
         }}
       />
+      <CommentForm slug={slug} />
     </Container>
   );
 }
