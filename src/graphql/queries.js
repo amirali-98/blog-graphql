@@ -37,3 +37,25 @@ export const GET_AUTHOR = gql`
     }
   }
 `;
+
+export const GET_POSTS = gql`
+  query {
+    posts {
+      id
+      title
+      slug
+      cover {
+        url
+      }
+      author {
+        id
+        slug
+        firstName
+        lastName
+        avatar {
+          url
+        }
+      }
+    }
+  }
+`;

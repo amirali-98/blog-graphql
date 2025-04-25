@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <Box component="main" margin={5}>
+      <Box component="main" my={5}>
         {children}
       </Box>
       <Box bgcolor="#111827" textAlign="center" padding={2} component="footer">
