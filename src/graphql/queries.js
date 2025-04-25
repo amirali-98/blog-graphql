@@ -59,3 +59,28 @@ export const GET_POSTS = gql`
     }
   }
 `;
+
+export const GET_POST = gql`
+  query getPost($slug: String!) {
+    post(where: { slug: $slug }) {
+      id
+      slug
+      title
+      cover {
+        url
+      }
+      content {
+        html
+      }
+      author {
+        id
+        slug
+        firstName
+        lastName
+        avatar {
+          url
+        }
+      }
+    }
+  }
+`;

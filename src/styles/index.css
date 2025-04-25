@@ -19,16 +19,20 @@ a {
   bo
 } */
 
-.author-description p {
+.author-description p,
+.post-content p {
+  margin-bottom: 16px;
+}
+
+.author-description h2,
+.post-content h2 {
+  font-weight: 700;
+  font-size: 1.4rem;
   margin-bottom: 8px;
 }
 
-.author-description h2 {
-  font-weight: 700;
-  font-size: 1.4rem;
-}
-
-.author-description ul {
+.author-description ul,
+.post-content ul {
   padding: 0 16px;
   list-style: none;
 }
