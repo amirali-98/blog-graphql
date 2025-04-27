@@ -19,7 +19,6 @@ export default function CommentForm({ slug }) {
   }
 
   function sendHandler() {
-    console.log(slug);
     createComment({
       variables: {
         ...comment,

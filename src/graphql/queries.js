@@ -81,6 +81,12 @@ export const GET_POST = gql`
           url
         }
       }
+      comment {
+        id
+        fullName
+        email
+        content
+      }
     }
   }
 `;

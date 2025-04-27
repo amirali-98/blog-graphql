@@ -5,6 +5,7 @@ import { Container, Typography } from "@mui/material";
 import dompurify from "dompurify";
 import { GET_POST } from "../graphql/queries";
 import CommentForm from "../components/CommentForm";
+import CommentList from "../components/CommentList";
 
 export default function Post() {
   const [post, setPost] = useState({});
@@ -19,9 +20,11 @@ export default function Post() {
       cover: response.data?.post.cover.url,
       content: response.data?.post.content.html || "",
       slug: response.data?.post.slug,
+      comments: response.data?.post.comment,
       loading: response.loading,
     });
   }, [response]);
+  console.log(response);
 
   return (
     <Container maxWidth="lg">
@@ -46,6 +49,7 @@ export default function Post() {
         }}
       />
       <CommentForm slug={slug} />
+      <CommentList comments={post.comments} />
     </Container>
   );
 }

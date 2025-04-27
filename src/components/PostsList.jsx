@@ -13,8 +13,6 @@ export default function PostsList() {
     setPosts(response);
   }, [response]);
 
-  console.log(response);
-
   return (
     <Grid container gap={1}>
       {posts.data?.posts.map(post => (
