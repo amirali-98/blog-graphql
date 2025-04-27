@@ -11,7 +11,7 @@ const initialState = {
 
 export default function CommentForm({ slug }) {
   const [comment, setComment] = useState(initialState);
-  const [createComment, data] = useMutation(CREATE_COMMENT);
+  const [createComment, { loading }] = useMutation(CREATE_COMMENT);
 
   function commentFormHandler(e) {
     const { name, value } = e.target;
@@ -25,6 +25,7 @@ export default function CommentForm({ slug }) {
         slug,
       },
     });
+    setComment(initialState);
   }
 
   return (
@@ -36,6 +37,7 @@ export default function CommentForm({ slug }) {
         <Grid size={12}>
           <TextField
             variant="outlined"
+            value={comment.fullName}
             label="نام"
             fullWidth
             name="fullName"
@@ -45,6 +47,7 @@ export default function CommentForm({ slug }) {
         <Grid size={12}>
           <TextField
             variant="outlined"
+            value={comment.email}
             label="ایمیل"
             fullWidth
             name="email"
@@ -54,6 +57,7 @@ export default function CommentForm({ slug }) {
         <Grid size={12}>
           <TextField
             variant="outlined"
+            value={comment.content}
             label="کامنت"
             fullWidth
             multiline
@@ -62,7 +66,12 @@ export default function CommentForm({ slug }) {
           />
         </Grid>
         <Grid size={12}>
-          <Button variant="contained" fullWidth onClick={sendHandler}>
+          <Button
+            variant="contained"
+            fullWidth
+            onClick={sendHandler}
+            loading={loading}
+          >
             ارسال کامنت
           </Button>
         </Grid>
