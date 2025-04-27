@@ -28,7 +28,7 @@ export default function Post() {
 
   return (
     <Container maxWidth="lg">
-      {true ? (
+      {post.loading ? (
         <Box
           height="80vh"
           display="flex"
