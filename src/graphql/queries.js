@@ -81,7 +81,7 @@ export const GET_POST = gql`
           url
         }
       }
-      comment {
+      comment(orderBy: publishedAt_DESC) {
         id
         fullName
         email
