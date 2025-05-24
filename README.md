@@ -6,11 +6,9 @@ This project is a **React-based frontend** for a blog, utilizing **GraphQL** to 
 
 * **Dynamic Content:** Fetches and displays blog posts, authors, categories, etc., from Hygraph.
 * **GraphQL Integration:** Uses GraphQL queries to efficiently retrieve only necessary data.
-    * (Mention if you use a specific GraphQL client like Apollo Client, urql, or Relay)
-* **Responsive Design:** (If applicable) UI adapts to different screen sizes.
-* **Routing:** (If applicable, e.g., using React Router) Navigates between home page, post details, category pages, etc.
-* **Component-Based Architecture:** Built with reusable React components.
-* **(Add any other key frontend features: search functionality, comments display, pagination, etc.)**
+* **Responsive Design:**  UI adapts to different screen sizes.
+* **Routing:** React Router Dom.
+* **Component-Based Architecture:** Built with reusable MUI components.
 
 ## 🛠️ Technologies Used
 
