@@ -17,16 +17,13 @@ This project is a **React-based frontend** for a blog, utilizing **GraphQL** to 
 * **Frontend:**
     * React (version X.X)
     * (React Router for routing, if used)
-    * (State Management: e.g., Redux, Zustand, Context API, if used)
     * (GraphQL Client: e.g., Apollo Client, urql, if used)
-    * (Styling: e.g., CSS Modules, Styled Components, Tailwind CSS, Material-UI)
+    * (Styling: e.g., Materail UI)
     * (Testing: e.g., Jest, React Testing Library, if used)
 * **Backend/CMS:**
     * Hygraph (GraphQL Headless CMS)
 * **Build Tools:**
     * (e.g., Vite, Create React App/Webpack)
-* **Other Libraries:**
-    * (e.g., date-fns or moment.js for date formatting, axios for other API calls if any)
 
 ## 🚀 Getting Started
 
